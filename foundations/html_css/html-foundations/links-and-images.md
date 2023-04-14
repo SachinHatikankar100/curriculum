@@ -8,10 +8,10 @@ In this lesson, we will learn how to create links and add some visual flair to o
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-*   How to create links to pages on other websites on the internet
-*   How to create links to other pages on your own websites
-*   The difference between absolute and relative links
-*   How to display an image on a webpage using HTML
+- How to create links to pages on other websites on the internet
+- How to create links to other pages on your own websites
+- The difference between absolute and relative links
+- How to display an image on a webpage using HTML
 
 ### Preparation
 
@@ -22,9 +22,9 @@ To get some practice using links and images throughout this lesson we need an HT
 3.  Open the file in VS Code and fill in the usual HTML boilerplate.
 4.  Finally, add the following h1 to the body:
 
-~~~html
+```html
 <h1>Homepage</h1>
-~~~
+```
 
 ### Anchor Elements
 
@@ -32,9 +32,9 @@ To create a link in HTML, we use the anchor element. An anchor element is define
 
 Add the following to the body of the index.html page we created and open it in the browser:
 
-~~~html
+```html
 <a>click me</a>
-~~~
+```
 
 You may have noticed that clicking this link doesn't do anything. This is because an anchor tag on its own won't know where we want to link to. We have to tell it a destination to go to. We do this by using an HTML attribute.
 
@@ -42,9 +42,9 @@ You may have noticed that clicking this link doesn't do anything. This is becaus
 
 Add the following href attribute to the anchor element we created previously and try clicking it again, don't forget to refresh the browser so the new changes can be applied.
 
-~~~html
+```html
 <a href="https://www.theodinproject.com/about">click me</a>
-~~~
+```
 
 By default, any text wrapped with an anchor tag without a `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link.
 
@@ -69,15 +69,15 @@ We've already seen an absolute link in action. The link we created to The Odin P
 
 Links to other pages within our own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page we created the link on.
 
-Relative links only include the file path to the other page, *relative* to the page you are creating the link on. This is quite abstract, let's see this in action using an example.
+Relative links only include the file path to the other page, _relative_ to the page you are creating the link on. This is quite abstract, let's see this in action using an example.
 
 Within the `odin-links-and-images` directory, create another HTML file named `about.html` and paste the following code into it:
 
-~~~html
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Odin Links and Images</title>
   </head>
 
@@ -85,18 +85,18 @@ Within the `odin-links-and-images` directory, create another HTML file named `ab
     <h1>About Page</h1>
   </body>
 </html>
-~~~
+```
 
 Back in the index page, add the following anchor element to create a link to the about page:
 
-~~~html
+```html
 <body>
   <h1>Homepage</h1>
-	<a href="https://www.theodinproject.com/about">click me</a>
+  <a href="https://www.theodinproject.com/about">click me</a>
 
-	<a href="about.html">About</a>
+  <a href="about.html">About</a>
 </body>
-~~~
+```
 
 Open the index file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the about page we just created.
 
@@ -108,26 +108,25 @@ Create a directory named `pages` within the `odin-links-and-images` directory an
 
 Refresh the index page in the browser and then click on the about link. It will now be broken. This is because the location of the about page file has changed.
 
-To fix this, we just need to update the about link href value to include the `pages/` directory since that is the new location of the about file *relative* to the index file.
+To fix this, we just need to update the about link href value to include the `pages/` directory since that is the new location of the about file _relative_ to the index file.
 
-~~~html
+```html
 <body>
   <h1>Homepage</h1>
   <a href="pages/about.html">About</a>
 </body>
-~~~
+```
 
 Refresh the index page in the browser and try clicking the about link again, it should now be back in working order.
 
-In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding  `./` you are specifying to your code that it should start looking for the file/directory *relative* to the `current` directory. 
+In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory _relative_ to the `current` directory.
 
-~~~html
+```html
 <body>
   <h1>Homepage</h1>
   <a href="./pages/about.html">About</a>
 </body>
-~~~
-
+```
 
 #### A Metaphor
 
@@ -162,27 +161,28 @@ To use images that we have on our own websites, we can use a relative path.
 
 Finally add the image to the `index.html` file:
 
-~~~html
+```html
 <body>
   <h1>Homepage</h1>
-	<a href="https://www.theodinproject.com/about">click me</a>
+  <a href="https://www.theodinproject.com/about">click me</a>
 
-	<a href="pages/about.html">About</a>
+  <a href="pages/about.html">About</a>
 
-	<img src="images/dog.jpg">
+  <img src="images/dog.jpg" />
 </body>
-~~~
+```
 
 Save the `index.html` file and open it in a browser to view Charles in all his glory.
 
 ### Parent Directories
+
 What if we want to use the dog image in the about page? We would first have to go up one level out of the pages directory into its parent directory so we could then access the images directory.
 
 <span id="parent-filepath"></span>To go to the parent directory we need to use two dots in the relative filepath like this: `../`. Let's see this in action, within the body of the `about.html` file, add the following image below the heading we added earlier:
 
-~~~html
-<img src="../images/dog.jpg">
-~~~
+```html
+<img src="../images/dog.jpg" />
+```
 
 To break this down:
 
@@ -224,19 +224,19 @@ As a bit of practice, add an alt attribute to the dog image we added to the `odi
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
-*   <a class="knowledge-check-link" href="#anchor-elements">What element is used to create a link?</a>
-*   <a class="knowledge-check-link" href="#attribute">What is an attribute?</a>
-*   <a class="knowledge-check-link" href="#where-to-go">What attribute tells links where to go to?</a>
-*   <a class="knowledge-check-link" href="#absolute-and-relative-links">What is the difference between an absolute and relative link?</a>
-*   <a class="knowledge-check-link" href="#images">Which element is used to display an image?</a>
-*   <a class="knowledge-check-link" href="#two-attributes">What two attributes do images always need to have?</a>
-*   <a class="knowledge-check-link" href="#parent-filepath">How do you access a parent directory in a filepath?</a>
-*   <a class="knowledge-check-link" href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats">What are the four main image formats that you can use for images on the web?</a>
+- <a class="knowledge-check-link" href="#anchor-elements">What element is used to create a link?</a>
+- <a class="knowledge-check-link" href="#attribute">What is an attribute?</a>
+- <a class="knowledge-check-link" href="#where-to-go">What attribute tells links where to go to?</a>
+- <a class="knowledge-check-link" href="#absolute-and-relative-links">What is the difference between an absolute and relative link?</a>
+- <a class="knowledge-check-link" href="#images">Which element is used to display an image?</a>
+- <a class="knowledge-check-link" href="#two-attributes">What two attributes do images always need to have?</a>
+- <a class="knowledge-check-link" href="#parent-filepath">How do you access a parent directory in a filepath?</a>
+- <a class="knowledge-check-link" href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats">What are the four main image formats that you can use for images on the web?</a>
 
 ### Additional Resources
 
 This section contains helpful links to related content. It isn’t required, so consider it supplemental.
 
--   [Interneting is hard's treatment on HTML links and images](https://www.internetingishard.com/html-and-css/links-and-images/)
--   [What happened the day Google decided links including (`/`) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)
-
+- [More details on HTML links](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)
+- [More details on HTML images](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+- [What happened the day Google decided links including (`/`) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)
